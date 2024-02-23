@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Member</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+</head>
+    <body>
+        <main class="container">
+            <h2 class="header" th:text="#{form.update_member}">Update Member</h2>
+            <form class="form-member" action="#" th:action="@{/update/{id}(id=${member.id})}" th:object="${member}"  method="post">
+                <div class="form-grid">
+                    <label for="name" th:text="#{label.name}">Name</label>
+                    <input type="text" id="name" name="name" th:field="*{name}">
+                </div>
+
+                <div class="form-grid">
+                    <label for="dateOfBirth" th:text="#{label.date_of_birth}">Date of Birth</label>
+                    <input type="date" id="dateOfBirth" th:field="*{dateOfBirth}">
+                </div>
+
+                <div class="form-grid">
+                    <label for="education" th:text="#{label.education}">Education</label>
+                    <input type="text" id="education" name="education" th:field="*{education}">
+                </div>
+
+                <div class="form-grid">
+                    <label for="email" th:text="#{label.email}">Email</label>
+                    <input type="email" id="email" name="email" th:field="*{email}">
+                </div>
+
+                <div class="form-grid">
+                    <label for="mobileNumber" th:text="#{label.mobile_no}">Mobile No</label>
+                    <input type="text" id="mobileNumber" name="mobileNumber" th:field="*{mobileNumber}">
+                </div>
+
+                <button class="btn-submit" type="submit" th:text="#{button.save}">Save</button>
+            </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Poppins, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3, h4, p {
+    margin: 0;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+select, option{
+    padding: 4px 6px;
+}
+
+button {
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    font-family: Poppins, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* Style for the container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.action-header-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.link-create {
+    padding: 5px 10px;
+    color: #F0F0F0;
+    background-color: #4CAF50;
+    border-radius: 8px;
+}
+
+/* Style for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #F7F9FC;
+    color: #030303;
+}
+
+/* Style for table rows */
+tr:nth-child(even) {
+    background-color: #F9F9F9;
+}
+
+.operation-container {
+    display: flex;
+    gap: 4px;
+}
+
+.action {
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 14px
+}
+
+.action.action-update {
+    color: #F0F0F0;
+    background-color: #4CAF50;
+}
+
+.action.action-delete {
+    background-color: #F44336;
+}
+
+.action.action-delete > button {
+    font-size: 14px;
+    color: #F0F0F0;
+}
+
+.action.action-detail {
+    color: #F0F0F0;
+    background-color: #2196F3;
+}
+
+.header {
+    text-align: center;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    margin: 0;
+}
+
+.form-member, .member-detail {
+    padding: 6px 4px;
+    border: 1px solid #ddd;
+}
+
+.form-grid {
+    padding: 5px 0;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.btn-submit {
+    margin-top: 5px;
+    padding: 5px 10px;
+    color: #F0F0F0;
+    background-color: #4CAF50;
+    border-radius: 2px;
+    width: 100%;
+}

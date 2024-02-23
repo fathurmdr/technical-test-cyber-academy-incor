@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Members</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+</head>
+    <body>
+        <main class="container">
+            <div class="action-header-container">
+                <a class="link-create" th:text="#{link.create}" href="/create">Create</a>
+                <div>
+                    <label th:text="#{toggle.language}"></label>
+                    <select>
+                        <option value="en">English</option>
+                        <option value="id">Bahasa Indonesia</option>
+                        <option value="id">Korean</option>
+                    </select>
+                </div>
+            </div>
+            <table class="table-members">
+                <thead>
+                <tr>
+                    <th>No</th>
+                    <th th:text="#{table.name}">Name</th>
+                    <th th:text="#{table.date_of_birth}">Date of Birth</th>
+                    <th th:text="#{table.education}">Education</th>
+                    <th th:text="#{table.email}">Email</th>
+                    <th th:text="#{table.mobile_no}">Mobile No</th>
+                    <th th:text="#{table.operation}">Operation</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="member,iStat : ${members}">
+                    <td th:text="${iStat.count}">1</td>
+                    <td th:text="${member.name}"></td>
+                    <td th:text="${member.dateOfBirth}"></td>
+                    <td th:text="${member.education}"></td>
+                    <td th:text="${member.email}"></td>
+                    <td th:text="${member.mobileNumber}"></td>
+                    <td>
+                        <div class="operation-container">
+                            <a class="action action-update" th:text="#{table.operation.link.update}" th:href="@{/update/{id}(id=${member.id})}">update</a>
+                            <form class="action action-delete" action="#" th:action="@{/delete/{id}(id=${member.id})}" method="post">
+                                <button th:text="#{table.operation.button.delete}" >delete</button>
+                            </form>
+                            <a class="action action-detail" th:text="#{table.operation.link.detail}" th:href="@{/{id}(id=${member.id})}">detail</a>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </main>
+    </body>
+</html>

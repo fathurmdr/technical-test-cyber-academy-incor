@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Member</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+</head>
+    <body>
+        <main class="container">
+            <h2 class="header" th:text="#{member_detail}">Member Detail</h2>
+            <div class="member-detail">
+                <div class="form-grid">
+                    <p th:text="#{label.name}">Name</p>
+                    <span id="name" th:text="${member.name}"></span>
+                </div>
+
+                <div class="form-grid">
+                    <p th:text="#{label.date_of_birth}">Date of Birth</p>
+                    <span id="dateOfBirth" th:text="${member.dateOfBirth}"></span>
+                </div>
+
+                <div class="form-grid">
+                    <p th:text="#{label.education}">Education</p>
+                    <span id="education"  th:text="${member.education}"></span>
+                </div>
+
+                <div class="form-grid">
+                    <p th:text="#{label.email}">Email</p>
+                    <span  id="email" th:text="${member.email}"></span>
+                </div>
+
+                <div class="form-grid">
+                    <p th:text="#{label.mobile_no}">Mobile No</p>
+                    <span id="mobileNumber" th:text="${member.mobileNumber}"></span>
+                </div>
+
+            </div>
+        </main>
+    </body>
+</html>
