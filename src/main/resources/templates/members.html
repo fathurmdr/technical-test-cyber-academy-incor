@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Members</title>
     <link th:href="@{/css/main.css}" rel="stylesheet" />
+    <script type="text/javascript" th:src="@{/js/script.js}"></script>
 </head>
     <body>
         <main class="container">
@@ -11,10 +12,10 @@
                 <a class="link-create" th:text="#{link.create}" href="/create">Create</a>
                 <div>
                     <label th:text="#{toggle.language}"></label>
-                    <select>
-                        <option value="en">English</option>
-                        <option value="id">Bahasa Indonesia</option>
-                        <option value="id">Korean</option>
+                    <select id="lang">
+                        <option th:selected="${#locale.language == 'en'}" value="en">English</option>
+                        <option th:selected="${#locale.language == 'id'}" value="id">Bahasa Indonesia</option>
+                        <option th:selected="${#locale.language == 'ko'}" value="ko">Korean</option>
                     </select>
                 </div>
             </div>
