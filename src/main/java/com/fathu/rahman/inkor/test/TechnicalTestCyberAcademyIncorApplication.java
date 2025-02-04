@@ -1,5 +1,6 @@
 package com.fathu.rahman.inkor.test;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
@@ -36,6 +37,16 @@ public class TechnicalTestCyberAcademyIncorApplication implements WebMvcConfigur
 	}
 
 	public static void main(String[] args) {
+		Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
+
+		String dbUrl = dotenv.get("DB_URL");
+        String dbUsername = dotenv.get("DB_USERNAME");
+        String dbPassword = dotenv.get("DB_PASSWORD");
+
+        System.setProperty("spring.datasource.url", dbUrl);
+        System.setProperty("spring.datasource.username", dbUsername);
+        System.setProperty("spring.datasource.password", dbPassword);
+	
 		SpringApplication.run(TechnicalTestCyberAcademyIncorApplication.class, args);
 	}
 
